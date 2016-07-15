@@ -1,0 +1,33 @@
+﻿@{
+  /*
+~/Views/Shared/_Layout.cshtml
+*/
+}
+
+@{
+  Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width" />
+  <title>@ViewBag.Title - SimpleBlog</title>
+</head>
+<body>
+
+  <header>
+    <h1>
+      <a href="@Url.RouteUrl("Home")">Simple Blog</a>
+    </h1>
+    <a href="@Url.RouteUrl("Login")">Login</a>
+  </header>
+  @RenderBody()
+
+  <footer>
+    &copy; @DateTime.UtcNow.Year - Me
+  </footer>
+
+  @RenderSection("Scripts", false)
+</body>
+</html>

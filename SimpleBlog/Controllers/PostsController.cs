@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+~/Controllers/PostsController.cs
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +13,8 @@ namespace SimpleBlog.Controllers
   {
     public ActionResult Index()
     {
-      return Content("PostsController.Index");
+      //return Content("PostsController.Index");
+      return View();
     }
   }
 }

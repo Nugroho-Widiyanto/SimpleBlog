@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿/*
+~/Areas/Admin/AdminAreaRegistration.cs
+*/
+using System.Web.Mvc;
 
 namespace SimpleBlog.Areas.Admin
 {

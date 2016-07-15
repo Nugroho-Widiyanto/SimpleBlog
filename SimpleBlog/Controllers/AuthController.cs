@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+~/Controllers/AuthController.cs
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +14,8 @@ namespace SimpleBlog.Controllers
   {
     public ActionResult Login()
     {
-      return Content("AuthController.Login");
+      //return Content("AuthController.Login");
+      return View();
     }
   }
 }
