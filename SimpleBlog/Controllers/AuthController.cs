@@ -8,11 +8,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace SimpleBlog.Controllers
 {
   public class AuthController : Controller
   {
+    [HttpGet]
+    public ActionResult Logout()
+    {
+      FormsAuthentication.SignOut();
+      return RedirectToRoute("Home");
+    }
+
     [HttpGet]
     public ActionResult Login()
     {
@@ -22,18 +30,17 @@ namespace SimpleBlog.Controllers
     }
 
     [HttpPost]
-    public ActionResult Login(AuthLogin form)
+    public ActionResult Login(AuthLogin form, string returnUrl)
     {
       if (ModelState.IsValid == false)
         return View(form);
 
-      if (form.Username != "widi")
-      {
-        ModelState.AddModelError("Username", "not widi");
-        return View(form);
-      }
+      FormsAuthentication.SetAuthCookie(form.Username, true);
 
-      return Content("form is valid");
+      if (string.IsNullOrWhiteSpace(returnUrl) == false)
+        return Redirect(returnUrl);
+
+      return RedirectToRoute("Home");
     }
   }
 }

@@ -20,7 +20,20 @@
     <h1>
       <a href="@Url.RouteUrl("Home")">Simple Blog</a>
     </h1>
-    <a href="@Url.RouteUrl("Login")">Login</a>
+    @if (User.Identity.IsAuthenticated)
+    {
+      <p>welcome back, @User.Identity.Name</p>
+      <a href="@Url.RouteUrl("logout")">Logout</a><br />
+      if (User.IsInRole("admin"))
+      {
+        <a href="@Url.Action("Index", "Posts", new { area = "Admin" })">view posts in admin</a><br />
+        <a href="@Url.RouteUrl(new { area = "Admin", controller = "Users", action = "Index" })">view posts in admin</a>
+      }
+    }
+    else
+    {
+      <a href="@Url.RouteUrl("Login")">Login</a>
+    }
   </header>
   @RenderBody()
 

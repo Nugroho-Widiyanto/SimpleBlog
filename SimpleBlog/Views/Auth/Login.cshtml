@@ -13,7 +13,7 @@
 
 @using (Html.BeginForm())
 {
-  @Html.ValidationSummary()
+  @Html.ValidationSummary();
   <div>
     @Html.LabelFor(x => x.Username)
     @Html.EditorFor(x => x.Username)
@@ -23,6 +23,6 @@
     @Html.EditorFor(x => x.Password)
   </div>
   <div>
-    <input type="submit" value="Lofin" />
+    <input type="submit" value="Login" />
   </div>
 }
