@@ -1,4 +1,5 @@
-﻿/*
+﻿using SimpleBlog.Infrastructure;
+/*
 ~/Areas/Admin/Controllers/PostsController.cs
 */
 using System;
@@ -9,12 +10,12 @@ using System.Web.Mvc;
 
 namespace SimpleBlog.Areas.Admin.Controllers
 {
-  [Authorize(Roles = "admin")]
+  [Authorize(Roles = "admin"), SelectedTab("posts")]
   public class PostsController : Controller
   {
     public ActionResult Index()
     {
-      return Content("Admin.PostsController.Index");
+      return View();
     }
   }
 }
