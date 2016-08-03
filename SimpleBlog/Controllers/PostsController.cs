@@ -1,10 +1,6 @@
 ﻿/*
-~/Controllers/PostsController.cs
-*/
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+ * ~/Controllers/PostsController.cs
+ */
 using System.Web.Mvc;
 
 namespace SimpleBlog.Controllers

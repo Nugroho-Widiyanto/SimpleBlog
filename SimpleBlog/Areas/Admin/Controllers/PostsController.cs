@@ -1,11 +1,7 @@
-﻿using SimpleBlog.Infrastructure;
-/*
-~/Areas/Admin/Controllers/PostsController.cs
-*/
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿/*
+ * ~/Areas/Admin/Controllers/PostsController.cs
+ */
+using SimpleBlog.Infrastructure;
 using System.Web.Mvc;
 
 namespace SimpleBlog.Areas.Admin.Controllers

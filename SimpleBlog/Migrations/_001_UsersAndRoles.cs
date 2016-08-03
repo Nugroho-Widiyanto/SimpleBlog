@@ -1,8 +1,7 @@
-﻿using FluentMigrator;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿/*
+ * ~/Migrations/_001_UsersAndRoles.cs
+ */
+using FluentMigrator;
 
 namespace SimpleBlog.Migrations
 {

@@ -1,6 +1,6 @@
 ﻿/*
-~/Areas/Admin/AdminAreaRegistration.cs
-*/
+ * ~/Areas/Admin/AdminAreaRegistration.cs
+ */
 using System.Web.Mvc;
 
 namespace SimpleBlog.Areas.Admin

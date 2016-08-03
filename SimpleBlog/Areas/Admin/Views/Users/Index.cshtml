@@ -1,7 +1,7 @@
 ﻿@{
   /*
-~/Areas/Admin/Views/Users/Index.cshtml
-*/
+   * ~/Areas/Admin/Views/Users/Index.cshtml
+   */
 }
 
 @model SimpleBlog.Areas.Admin.ViewModels.UsersIndex
@@ -12,9 +12,53 @@
 
 <h2>Areas/Admin/Views/Users/Index</h2>
 
-<ul>
-  @foreach (var user in Model.Users)
-  {
-    <li>@user.Username</li>
-  }
-</ul>
+<div class="btn-toolbar">
+  <a href="@Url.Action("New")" class="btn btn-primary btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Create User</a>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Roles</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var user in Model.Users)
+    {
+      <tr>
+        <td>@user.Id</td>
+        <td>@user.Username</td>
+        <td>@user.Email</td>
+        <td>Roles</td>
+        <td>
+          <div class="btn-group">
+            <!--
+              we're not putting
+              id = user.Id
+              coz in anonymous type like this, you dont actually need to specified the name of it if the compiler confer the name from the property you're setting to
+              since its uder.id, the compiler infer thats the id parameter
+              -->
+            <a href="@Url.Action("Edit", new { user.Id })" class="btn btn-xs btn-primary">
+              <i class="glyphicon glyphicon-user"></i>
+              Edit
+            </a>
+            <a href="@Url.Action("ResetPassword", new { user.Id })" class="btn btn-xs btn-default">
+              <i class="glyphicon glyphicon-lock"></i>
+              Reset Password
+            </a>
+            <a href="@Url.Action("Delete", new { user.Id })" class="btn btn-xs btn-danger" data-post="Are you sure want to delete @user.Username?">
+              <i class="glyphicon glyphicon-trash"></i>
+              Delete
+            </a>
+          </div>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

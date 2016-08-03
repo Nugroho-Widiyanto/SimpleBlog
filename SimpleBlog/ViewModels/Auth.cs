@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿/*
+ * ~/ViewModels/AuthLogin.cs
+ */
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace SimpleBlog.ViewModels
 {

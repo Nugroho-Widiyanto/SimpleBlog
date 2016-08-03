@@ -1,6 +1,6 @@
 ﻿/*
- ~/Database.cs
-*/
+ * ~/Database.cs
+ */
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Mapping.ByCode;

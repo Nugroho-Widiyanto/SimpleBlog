@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿/*
+ * ~/App_Start/BundleConfig.cs
+ */
 using System.Web.Optimization;
-
 
 namespace SimpleBlog
 {
@@ -29,7 +27,8 @@ namespace SimpleBlog
         .Include("~/scripts/jquery-3.1.0.js")
         .Include("~/scripts/jquery.validate.js")
         .Include("~/scripts/jquery.validate.unobtrusive.js")
-        .Include("~/scripts/bootstrap.js"));
+        .Include("~/scripts/bootstrap.js")
+        .Include("~/areas/admin/scripts/forms.js"));
     }
   }
 }

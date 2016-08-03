@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using NHibernate.Mapping.ByCode.Conformist;
+﻿/*
+ * ~/Models/User.cs
+ */
 using NHibernate.Mapping.ByCode;
+using NHibernate.Mapping.ByCode.Conformist;
 
 namespace SimpleBlog.Models
 {
@@ -14,6 +13,11 @@ namespace SimpleBlog.Models
     public virtual string Username { get; set; }
     public virtual string Email { get; set; }
     public virtual string PasswordHash { get; set; }
+
+    public virtual void SetPassword(string password)
+    {
+      PasswordHash = "password";
+    }
   }
 
   public class UserMap : ClassMapping<User>

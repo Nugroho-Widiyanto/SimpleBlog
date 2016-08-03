@@ -1,0 +1,36 @@
+﻿@{
+  /*
+   * ~/Areas/Admin/Views/Users/New.cshtml
+   */
+}
+
+@model SimpleBlog.Areas.Admin.ViewModels.UsersNew
+
+@{
+  ViewBag.Title = "New";
+}
+
+<h2>Areas/Admin/Views/Users/New</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.ValidationSummary() 
+
+  <div class="form-group">
+    @Html.LabelFor(f => f.Username)
+    @Html.TextBoxFor(f => f.Username, new { @class = "form-control" }) @* placing @ symbol in front of the "class" word is to threat it as identifier, because "class" is a keyword in c# *@
+  </div>
+  
+  <div class="form-group">
+    @Html.LabelFor(f => f.Email)
+    @Html.TextBoxFor(f => f.Email, new { @class = "form-control", type = "email" }) @* placing @ symbol in front of the "class" word is to threat it as identifier, because "class" is a keyword in c# *@
+  </div>
+  
+  <div class="form-group">
+    @Html.LabelFor(f => f.Password)
+    @Html.PasswordFor(f => f.Password, new { @class = "form-control", type = "password" }) @* placing @ symbol in front of the "class" word is to threat it as identifier, because "class" is a keyword in c# *@
+  </div>
+  
+  <input type="submit" value="Create User" class="btn btn-primary" />
+  <a href="@Url.Action("Index")">or cancel</a>
+}
