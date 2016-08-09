@@ -14,9 +14,21 @@ namespace SimpleBlog.Models
     public virtual string Email { get; set; }
     public virtual string PasswordHash { get; set; }
 
+    private const int workFactor = 13;
+
+    public static void FakeHash()
+    {
+      BCrypt.Net.BCrypt.HashPassword("", workFactor);
+    }
+
     public virtual void SetPassword(string password)
     {
-      PasswordHash = "password";
+      PasswordHash = BCrypt.Net.BCrypt.HashPassword(password, workFactor);
+    }
+
+    public virtual bool CheckPassword(string password)
+    {
+      return BCrypt.Net.BCrypt.Verify(password, PasswordHash);
     }
   }
 
